@@ -1,7 +1,8 @@
-import sys
-from parsedatetime import Calendar, Constants
 import json
+import sys
 from datetime import datetime, timedelta
+
+from parsedatetime import Calendar, Constants
 
 args = sys.argv[1:]
 query = str.join(" ", args)
@@ -25,7 +26,10 @@ if len(interval) > 0:
             if ok:
                 end = datetime(*date[:3])
                 end_excluded = end - timedelta(days=1)
-                result_excluded = "%s -> %s" % (result, end_excluded.strftime("%Y-%m-%d"))
+                result_excluded = "%s -> %s" % (
+                    result,
+                    end_excluded.strftime("%Y-%m-%d"),
+                )
 
 if not result:
     print(

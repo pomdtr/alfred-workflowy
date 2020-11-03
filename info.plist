@@ -8,11 +8,37 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>085D6302-011F-452D-A7D8-D317D3F977C4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A1BBDB61-71E0-4D78-8205-0D69339AA9F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>167CDDEB-8D9E-4AD7-8B8B-76DE547C6AF7</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>66339911-94B6-4647-9BD3-7112C774C1B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1FA36148-02D1-4128-AE1E-384EBA4718AD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4BBC3095-4BB2-4ED7-88B7-E30F02E6DEBF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -96,6 +122,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>39C647BD-D88E-4804-AB48-EBDC0B02A8FB</key>
 		<array>
@@ -104,6 +140,16 @@
 				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -135,6 +181,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>4E478DAC-B1DB-462E-88CD-CAE4C5EAAB4B</key>
 		<array>
@@ -143,6 +199,16 @@
 				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -174,6 +240,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>67A5040C-A163-40CA-8A39-7594387944BD</key>
 		<array>
@@ -182,6 +258,16 @@
 				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -221,6 +307,16 @@
 				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -271,6 +367,29 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A1BBDB61-71E0-4D78-8205-0D69339AA9F9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1FA36148-02D1-4128-AE1E-384EBA4718AD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -369,6 +488,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>EC015090-A185-4B6E-AB4D-8247B904AD22</key>
 		<array>
@@ -395,6 +524,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>F659EE87-C212-4003-A9B1-9ACECF37CF82</key>
 		<array>
@@ -403,6 +542,16 @@
 				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -1406,6 +1555,89 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python quick_add.py $node_id "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1FA36148-02D1-4128-AE1E-384EBA4718AD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>4BBC3095-4BB2-4ED7-88B7-E30F02E6DEBF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Input child text...</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A1BBDB61-71E0-4D78-8205-0D69339AA9F9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>node_id</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1467,17 +1699,32 @@ Many shortcuts can be suffixed with a c in orderto include completed nodes in re
 On each node, you can:
 - Use tab to display child nodes directly in alfred
 - use enter to open in browser
-- use cmd+enter to open in desktop app
+- use cmd+enter to add a child to the selected node
+- use alt+enter to open in desktop app
 - use shift+enter to open embed link, or tap shift to preview it.
 - use cmd+l to show a node note, and cmd+c to open it</string>
 	<key>uidata</key>
 	<dict>
+		<key>085D6302-011F-452D-A7D8-D317D3F977C4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>970</integer>
+			<key>ypos</key>
+			<integer>1450</integer>
+		</dict>
 		<key>167CDDEB-8D9E-4AD7-8B8B-76DE547C6AF7</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1150</integer>
 			<key>ypos</key>
 			<integer>120</integer>
+		</dict>
+		<key>1FA36148-02D1-4128-AE1E-384EBA4718AD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1475</integer>
+			<key>ypos</key>
+			<integer>1425</integer>
 		</dict>
 		<key>2041F1F4-91F3-4D48-9F96-F86CE7256E58</key>
 		<dict>
@@ -1534,6 +1781,13 @@ On each node, you can:
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>595</integer>
+		</dict>
+		<key>4BBC3095-4BB2-4ED7-88B7-E30F02E6DEBF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1725</integer>
+			<key>ypos</key>
+			<integer>1425</integer>
 		</dict>
 		<key>4E478DAC-B1DB-462E-88CD-CAE4C5EAAB4B</key>
 		<dict>
@@ -1619,12 +1873,19 @@ On each node, you can:
 			<key>ypos</key>
 			<integer>795</integer>
 		</dict>
+		<key>A1BBDB61-71E0-4D78-8205-0D69339AA9F9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1220</integer>
+			<key>ypos</key>
+			<integer>1425</integer>
+		</dict>
 		<key>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>940</integer>
+			<integer>970</integer>
 			<key>ypos</key>
-			<integer>870</integer>
+			<integer>855</integer>
 		</dict>
 		<key>A46FB0D6-209A-4664-A9F7-193B0EBFEEB5</key>
 		<dict>
@@ -1698,7 +1959,7 @@ On each node, you can:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.1</string>
+	<string>0.2</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

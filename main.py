@@ -1,23 +1,14 @@
 import argparse
-from datetime import datetime
 import sys
+from datetime import datetime
 
-from workflow import MATCH_ALL, MATCH_ALLCHARS
-from workflow import Workflow3, util, PasswordNotFound
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
+from workflow.background import is_running, run_in_background
 from workflowy_api.transport import Transport
-from workflowy_api.tree import Tree, daterange
-
-
-def is_dark_mode_enabled():
-    return (
-        util.run_command(["defaults"], ["read"], ["-g"], ["AppleInterfaceStyle"])
-        == "Dark"
-    )
-
+from workflowy_api.tree import daterange
 
 def coalesce(args, default=None):
     return next((a for a in args if a is not None), default)
-
 
 def get_node_icon(node):
     if node.is_completed:
@@ -37,11 +28,7 @@ def get_node_icon(node):
     return "img/node.png"
 
 
-def get_tree(wf, session_id, with_completed=False):
-    tree_dict, saved_views, transaction_id = Transport.get_initialization_data(
-        session_id
-    )
-    return Tree(tree_dict, saved_views, with_completed), transaction_id
+
 
 
 def create_parser():
@@ -101,28 +88,24 @@ def main(wf):
         wf.send_feedback()
         return 0
 
-    def get_tree_with_completed():
-        return get_tree(wf, session_id, True)
+    tree, transaction_id = wf.cached_data(
+        "workflowy_tree", None, max_age = 0
+    )
+    if not wf.cached_data_fresh('workflowy_tree', max_age=30):
+         cmd = ['/usr/bin/python', wf.workflowfile('update.py')]
+         run_in_background('update', cmd)
 
-    def get_tree_without_completed():
-        return get_tree(wf, session_id, False)
-
-    if args.with_completed:
-        tree, transaction_id = wf.cached_data(
-            "workflowy_tree_with_completed", get_tree_with_completed, session=True
-        )
-    else:
-        tree, transaction_id = wf.cached_data(
-            "workflowy_tree_without_completed", get_tree_without_completed, session=True
-        )
     wf.setvar("transaction_id", transaction_id)
+
+    if is_running('update'):
+        wf.add_item('Getting new posts from Pinboard',
+                     valid=False,
+                     icon="img/info.png")
 
     query = " ".join(args.query)
     if len(args.query) < 2 and args.tags or args.mentions:
         options_dict = tree.tags if args.tags else tree.mentions
-        if len(args.query) == 1 and args.query[0] in options_dict:
-            pass
-        else:
+        if len(args.query) != 1 or args.query[0] not in options_dict:
             options_dict = wf.filter(query, options_dict)
             for option in options_dict:
                 wf.add_item(
@@ -150,18 +133,11 @@ def main(wf):
     else:
         nodes = tree.nodes
 
+    if not args.with_completed:
+        nodes = [node for node in nodes if not node.is_completed]
+
     if args.dates:
-        start = args.range[0]
-        end = args.range[1] if len(args.range) > 1 else None
-        if end is not None:
-            node_ids = set()
-            start = datetime.strptime(start, "%Y-%m-%d")
-            end = datetime.strptime(end, "%Y-%m-%d")
-            for date in daterange(start, end, end_included=True):
-                node_ids.update(tree.calendar[date.strftime("%Y-%m-%d")])
-        else:
-            node_ids = tree.calendar[start]
-        nodes = [tree.available_nodes[node_id] for node_id in node_ids]
+        nodes = get_scheduled_nodes(tree, *args.range)
 
     autocomplete = ""
     if len(args.query) > 0:
@@ -185,81 +161,11 @@ def main(wf):
     )
 
     for node in nodes:
-        it = wf.add_item(
-            title=node.text if node.text else "Empty",
-            subtitle=node.path,
-            uid=node.id if not args.hierarchical and len(args.query) == 1 else None,
-            valid=True,
-            arg=node.website_url,
-            icon=get_node_icon(node),
-            autocomplete="%s%s " % (autocomplete, node.short_id)
-            if node.children
-            else None,
-            copytext=coalesce([node.note, node.embed_link, node.name]),
-            largetext=coalesce([node.note, node.name]),
-            quicklookurl=node.embed_link,
-        )
-        it.setvar("node_name", node.name)
-        it.setvar("node_note", node.note)
-        it.setvar("node_id", node.id)
-        it.setvar("node_desktop_url", node.desktop_url)
-        it.setvar("node_website_url", node.website_url)
-        it.setvar("node_embed_url", node.embed_link)
-        it.setvar("node_is_completed", int(node.is_completed))
-
-        it.add_modifier(
-            "cmd",
-            arg=node.desktop_url,
-            subtitle="Open in Desktop App",
-            valid=True,
-        )
-
-        if node.embed_link:
-            it.add_modifier(
-                "shift",
-                arg=node.embed_link,
-                subtitle="Open Embed Link: %s" % node.embed_link,
-                valid=True,
-            )
-            if node.has_inner_link:
-                inner_link_desktop = node.embed_link.replace("https://", "workflowy://")
-                it.add_modifier(
-                    "cmd+shift",
-                    arg=inner_link_desktop,
-                    subtitle="Open Inner Link in Desktop",
-                    valid=True,
-                )
+        add_node_item(wf, node, autocomplete, sortable=not args.hierarchical)
 
     if args.starred:
         for search in tree.starred_searches:
-            if search.node != None:
-                website_url = "https://workflowy.com/#/{}?q={}".format(
-                    search.node.short_id, search.query
-                )
-                desktop_url = "workflowy://workflowy.com/#/{}?q={}".format(
-                    search.node.short_id, search.query
-                )
-                subtitle = search.node.name
-            else:
-                website_url = "https://workflowy.com#?q={}".format(search.query)
-                desktop_url = "workflowy://workflowy.com/#?q={}".format(search.query)
-                subtitle = "Home"
-
-            it = wf.add_item(
-                title="Starred Search: {}".format(search.query),
-                subtitle=subtitle,
-                arg=website_url,
-                valid=True,
-                icon="img/search.png",
-            )
-            it.setvar("node_desktop_url", desktop_url)
-            it.setvar("node_website_url", website_url)
-            it.add_modifier(
-                "cmd",
-                arg=desktop_url,
-                subtitle="Search in Desktop App",
-                valid=True,
-            )
+            add_search_item(search)
 
     if len(nodes) + len(tree.starred_searches) == 0:
         wf.add_item(
@@ -272,6 +178,100 @@ def main(wf):
 
     wf.send_feedback()
 
+def get_scheduled_nodes(tree, start, end=None):
+    if end is not None:
+        node_ids = set()
+        start = datetime.strptime(start, "%Y-%m-%d")
+        end = datetime.strptime(end, "%Y-%m-%d")
+        for date in daterange(start, end, end_included=True):
+            node_ids.update(tree.calendar[date.strftime("%Y-%m-%d")])
+    else:
+        node_ids = tree.calendar[start]
+    return [tree.available_nodes[node_id] for node_id in node_ids]
+
+def add_node_item(wf, node, autocomplete, sortable=True):
+    it = wf.add_item(
+        title=node.text or "Empty",
+        subtitle=node.path,
+        uid=node.id if sortable else None,
+        valid=True,
+        arg=node.website_url,
+        icon=get_node_icon(node),
+        autocomplete="%s%s " % (autocomplete, node.short_id)
+        if node.children
+        else None,
+        copytext=coalesce([node.note, node.embed_link, node.name]),
+        largetext=coalesce([node.note, node.name]),
+        quicklookurl=node.embed_link,
+    )
+
+    it.setvar("node_name", node.name)
+    it.setvar("node_note", node.note)
+    it.setvar("node_id", node.id)
+    it.setvar("node_desktop_url", node.desktop_url)
+    it.setvar("node_website_url", node.website_url)
+    it.setvar("node_embed_url", node.embed_link)
+    it.setvar("node_is_completed", int(node.is_completed))
+
+    it.add_modifier(
+        "alt",
+        arg=node.desktop_url,
+        subtitle="Open in Desktop App",
+        valid=True,
+    )
+
+    it.add_modifier(
+        "cmd",
+        arg=node.id,
+        subtitle="Create child node",
+        valid=True,
+    )
+
+    if node.embed_link:
+        it.add_modifier(
+            "shift",
+            arg=node.embed_link,
+            subtitle="Open Embed Link: %s" % node.embed_link,
+            valid=True,
+        )
+        if node.has_inner_link:
+            inner_link_desktop = node.embed_link.replace("https://", "workflowy://")
+            it.add_modifier(
+                "cmd+shift",
+                arg=inner_link_desktop,
+                subtitle="Open Inner Link in Desktop",
+                valid=True,
+            )
+
+def add_search_item(wf, search):
+    if search.node is None:
+        website_url = "https://workflowy.com#?q={}".format(search.query)
+        desktop_url = "workflowy://workflowy.com/#?q={}".format(search.query)
+        subtitle = "Home"
+
+    else:
+        website_url = "https://workflowy.com/#/{}?q={}".format(
+            search.node.short_id, search.query
+        )
+        desktop_url = "workflowy://workflowy.com/#/{}?q={}".format(
+            search.node.short_id, search.query
+        )
+        subtitle = search.node.name
+    it = wf.add_item(
+        title="Starred Search: {}".format(search.query),
+        subtitle=subtitle,
+        arg=website_url,
+        valid=True,
+        icon="img/search.png",
+    )
+    it.setvar("node_desktop_url", desktop_url)
+    it.setvar("node_website_url", website_url)
+    it.add_modifier(
+        "cmd",
+        arg=desktop_url,
+        subtitle="Search in Desktop App",
+        valid=True,
+    )
 
 if __name__ == "__main__":
     wf = Workflow3()
