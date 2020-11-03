@@ -81,7 +81,7 @@ def main(wf):
     except PasswordNotFound:  # API key has not yet been set
         wf.add_item(
             "No API key set.",
-            "Please use wlogin to set your Pinboard API key.",
+            "Please use wlogin to set your Workflowy API key.",
             valid=False,
             icon="img/bug.png",
         )
@@ -98,7 +98,7 @@ def main(wf):
     wf.setvar("transaction_id", transaction_id)
 
     if is_running('update'):
-        wf.add_item('Getting new posts from Pinboard',
+        wf.add_item('Getting new nodes from Workflowy...',
                      valid=False,
                      icon="img/info.png")
 
