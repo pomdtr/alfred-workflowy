@@ -215,14 +215,14 @@ def add_node_item(wf, node, autocomplete, sortable=True):
     it.setvar("node_is_completed", int(node.is_completed))
 
     it.add_modifier(
-        "alt",
+        "cmd",
         arg=node.desktop_url,
         subtitle="Open in Desktop App",
         valid=True,
     )
 
     it.add_modifier(
-        "cmd",
+        "alt",
         arg=node.id,
         subtitle="Create child node",
         valid=True,

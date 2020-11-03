@@ -21,7 +21,7 @@ def main(wf):
             session_id = wf.get_password("session_id")
             return get_tree(session_id)
 
-        nodes = wf.cached_data("workflowy_tree", wrapper, max_age=30)
+        nodes = wf.cached_data("workflowy_tree", wrapper, max_age=10)
         # Record our progress in the log file
         wf.logger.debug("{} Workflowy nodes cached".format(len(nodes)))
 
