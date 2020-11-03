@@ -97,10 +97,6 @@ def main(wf):
 
     wf.setvar("transaction_id", transaction_id)
 
-    if is_running('update'):
-        wf.add_item('Getting new nodes from Workflowy...',
-                     valid=False,
-                     icon="img/info.png")
 
     query = " ".join(args.query)
     if len(args.query) < 2 and args.tags or args.mentions:
@@ -168,13 +164,18 @@ def main(wf):
             add_search_item(search)
 
     if len(nodes) + len(tree.starred_searches) == 0:
-        wf.add_item(
-            "No results !",
-            "Hit Enter to clear your search",
-            valid=False,
-            autocomplete="",
-            icon="img/info.png",
-        )
+        if is_running('update'):
+            wf.add_item('Getting new nodes from Workflowy...',
+                            valid=False,
+                            icon="img/info.png")
+        else:
+            wf.add_item(
+                "No results !",
+                "Hit Enter to clear your search",
+                valid=False,
+                autocomplete="",
+                icon="img/info.png",
+            )
 
     wf.send_feedback()
 
