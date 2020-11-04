@@ -11,19 +11,14 @@ def get_tree(session_id, with_completed=True):
 
 
 def main(wf):
-    try:
+    def wrapper():
+        session_id = wf.get_password("session_id")
+        return get_tree(session_id)
 
-        def wrapper():
-            session_id = wf.get_password("session_id")
-            return get_tree(session_id)
+    tree, _ = wf.cached_data("workflowy_tree", wrapper)
+    # Record our progress in the log file
+    wf.logger.debug("Workflowy nodes cached", tree)
 
-        nodes = wf.cached_data("workflowy_tree", wrapper, session=True)
-        # Record our progress in the log file
-        wf.logger.debug("{} Workflowy nodes cached".format(len(nodes)))
-
-    except PasswordNotFound:  # API key has not yet been set
-        # Nothing we can do about this, so just log it
-        wf.logger.error("No API key saved")
 
 
 if __name__ == "__main__":

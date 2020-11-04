@@ -3,9 +3,10 @@ import sys
 from datetime import datetime
 
 from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
-from workflow.background import is_running, run_in_background
+from workflow.background import run_in_background
 from workflowy_api.transport import Transport
 from workflowy_api.tree import daterange
+from update import get_tree
 
 def coalesce(args, default=None):
     return next((a for a in args if a is not None), default)
@@ -88,12 +89,16 @@ def main(wf):
         wf.send_feedback()
         return 0
 
+    def wrapper():
+        return get_tree(session_id)
+
     tree, transaction_id = wf.cached_data(
-        "workflowy_tree", None, max_age = 0
+        "workflowy_tree", wrapper, max_age = 0
     )
-    if not wf.cached_data_fresh('workflowy_tree', max_age=30):
-         cmd = ['/usr/bin/python', wf.workflowfile('update.py')]
-         run_in_background('update', cmd)
+    if not wf.cached_data_fresh('workflowy_tree', max_age=60):
+        cmd = ['/usr/bin/python', wf.workflowfile('update.py')]
+        run_in_background('update', cmd)
+    
 
     wf.setvar("transaction_id", transaction_id)
 
@@ -164,18 +169,13 @@ def main(wf):
             add_search_item(search)
 
     if len(nodes) + len(tree.starred_searches) == 0:
-        if is_running('update'):
-            wf.add_item('Getting new nodes from Workflowy...',
-                            valid=False,
-                            icon="img/info.png")
-        else:
-            wf.add_item(
-                "No results !",
-                "Hit Enter to clear your search",
-                valid=False,
-                autocomplete="",
-                icon="img/info.png",
-            )
+        wf.add_item(
+            "No results !",
+            "Hit Enter to clear your search",
+            valid=False,
+            autocomplete="",
+            icon="img/info.png",
+        )
 
     wf.send_feedback()
 
