@@ -43,6 +43,7 @@ def create_parser():
     parser.add_argument("--with-completed", action="store_true")
     parser.add_argument("--mentions", action="store_true")
     parser.add_argument("--tags", action="store_true")
+    parser.add_argument("--node", action="store_true")
     parser.add_argument("--dates", action="store_true")
     parser.add_argument("--range", nargs="+")
     parser.add_argument("--login")
@@ -95,7 +96,7 @@ def main(wf):
     tree, transaction_id = wf.cached_data(
         "workflowy_tree", wrapper, max_age = 0
     )
-    if not wf.cached_data_fresh('workflowy_tree', max_age=60):
+    if not wf.cached_data_fresh('workflowy_tree', max_age=10):
         cmd = ['/usr/bin/python', wf.workflowfile('update.py')]
         run_in_background('update', cmd)
     
@@ -162,7 +163,10 @@ def main(wf):
     )
 
     for node in nodes:
-        add_node_item(wf, node, autocomplete, sortable=not args.hierarchical)
+        if args.node:
+            add_simple_node_item(wf, node, autocomplete)
+        else:
+            add_node_item(wf, node, autocomplete, sortable=not args.hierarchical)
 
     if args.starred:
         for search in tree.starred_searches:
@@ -189,6 +193,22 @@ def get_scheduled_nodes(tree, start, end=None):
     else:
         node_ids = tree.calendar[start]
     return [tree.available_nodes[node_id] for node_id in node_ids]
+
+def add_simple_node_item(wf, node, autocomplete, sortable=True):
+    wf.add_item(
+        title=node.text or "Empty",
+        subtitle=node.path,
+        uid=node.id if sortable else None,
+        valid=True,
+        arg=node.id,
+        icon=get_node_icon(node),
+        autocomplete="%s%s " % (autocomplete, node.short_id)
+        if node.children
+        else None,
+        copytext=coalesce([node.note, node.embed_link, node.name]),
+        largetext=coalesce([node.note, node.name]),
+        quicklookurl=node.embed_link,
+    )
 
 def add_node_item(wf, node, autocomplete, sortable=True):
     it = wf.add_item(
