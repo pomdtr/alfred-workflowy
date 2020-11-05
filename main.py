@@ -36,7 +36,6 @@ def create_parser():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("query", nargs="*")
-    parser.add_argument("--find", action="store_true")
     parser.add_argument("--hierarchical", action="store_true")
     parser.add_argument("--starred", action="store_true")
     parser.add_argument("--only-links", action="store_true")
@@ -93,13 +92,15 @@ def main(wf):
     def wrapper():
         return get_tree(session_id)
 
-    tree, transaction_id = wf.cached_data(
-        "workflowy_tree", wrapper, max_age = 0
+    tree, tree_with_completed, transaction_id = wf.cached_data(
+        "workflowy_tree", None, max_age = 0
     )
-    if not wf.cached_data_fresh('workflowy_tree', max_age=10):
+    if not wf.cached_data_fresh('workflowy_tree', max_age=15):
         cmd = ['/usr/bin/python', wf.workflowfile('update.py')]
         run_in_background('update', cmd)
     
+    if args.with_completed:
+        tree = tree_with_completed
 
     wf.setvar("transaction_id", transaction_id)
 
@@ -134,9 +135,6 @@ def main(wf):
         nodes = [node for node in tree.nodes if node.has_link]
     else:
         nodes = tree.nodes
-
-    if not args.with_completed:
-        nodes = [node for node in nodes if not node.is_completed]
 
     if args.dates:
         nodes = get_scheduled_nodes(tree, *args.range)

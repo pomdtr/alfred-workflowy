@@ -3,11 +3,11 @@ from workflowy_api.transport import Transport
 from workflowy_api.tree import Tree
 
 
-def get_tree(session_id, with_completed=True):
+def get_tree(session_id):
     tree_dict, saved_views, transaction_id = Transport.get_initialization_data(
         session_id
     )
-    return Tree(tree_dict, saved_views, with_completed), transaction_id
+    return Tree(tree_dict, saved_views, False), Tree(tree_dict, saved_views, True),  transaction_id
 
 
 def main(wf):
@@ -15,9 +15,9 @@ def main(wf):
         session_id = wf.get_password("session_id")
         return get_tree(session_id)
 
-    tree, _ = wf.cached_data("workflowy_tree", wrapper, max_age=15)
+    wf.cached_data("workflowy_tree", wrapper, max_age=15)
     # Record our progress in the log file
-    wf.logger.debug("Workflowy nodes cached", tree)
+    wf.logger.debug("Workflowy nodes cached")
 
 
 
