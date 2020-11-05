@@ -1,11 +1,9 @@
 import argparse
 import sys
-from datetime import datetime
 
 from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
 from workflow.background import run_in_background
 from workflowy_api.transport import Transport
-from workflowy_api.tree import daterange
 from update import get_tree
 
 def coalesce(args, default=None):
@@ -43,7 +41,6 @@ def create_parser():
     parser.add_argument("--mentions", action="store_true")
     parser.add_argument("--tags", action="store_true")
     parser.add_argument("--node", action="store_true")
-    parser.add_argument("--dates", action="store_true")
     parser.add_argument("--range", nargs="+")
     parser.add_argument("--login")
     parser.add_argument("--code")
@@ -136,9 +133,6 @@ def main(wf):
     else:
         nodes = tree.nodes
 
-    if args.dates:
-        nodes = get_scheduled_nodes(tree, *args.range)
-
     autocomplete = ""
     if len(args.query) > 0:
         i = 0
@@ -180,17 +174,6 @@ def main(wf):
         )
 
     wf.send_feedback()
-
-def get_scheduled_nodes(tree, start, end=None):
-    if end is not None:
-        node_ids = set()
-        start = datetime.strptime(start, "%Y-%m-%d")
-        end = datetime.strptime(end, "%Y-%m-%d")
-        for date in daterange(start, end, end_included=True):
-            node_ids.update(tree.calendar[date.strftime("%Y-%m-%d")])
-    else:
-        node_ids = tree.calendar[start]
-    return [tree.available_nodes[node_id] for node_id in node_ids]
 
 def add_simple_node_item(wf, node, autocomplete, sortable=True):
     wf.add_item(

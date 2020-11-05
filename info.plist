@@ -73,19 +73,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>24F17C12-B3BA-4F96-896E-0F2C7330C250</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>B3D5E122-B254-4F23-AA0F-58D83F5374C8</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>25AA9577-9BB5-49FC-B34B-9C283DCC0D44</key>
 		<array>
 			<dict>
@@ -414,19 +401,6 @@
 				<true/>
 			</dict>
 		</array>
-		<key>90ED5AD7-386C-4B76-B0EB-B09D4686756C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>988552EE-E560-4A5F-B000-81491A169449</key>
 		<array>
 			<dict>
@@ -502,19 +476,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B3D5E122-B254-4F23-AA0F-58D83F5374C8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>EC015090-A185-4B6E-AB4D-8247B904AD22</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>B72FF8A3-4917-47D0-A762-DE2E69D8EBDB</key>
 		<array>
 			<dict>
@@ -582,19 +543,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>1FA36148-02D1-4128-AE1E-384EBA4718AD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>EC015090-A185-4B6E-AB4D-8247B904AD22</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>90ED5AD7-386C-4B76-B0EB-B09D4686756C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -927,89 +875,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>wd</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/python parsedate.py {query}</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Usage: wd start:end</string>
-				<key>title</key>
-				<string>Workflowy Dates</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>24F17C12-B3BA-4F96-896E-0F2C7330C250</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>EC015090-A185-4B6E-AB4D-8247B904AD22</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>delimiter</key>
-				<string>-&gt;</string>
-				<key>trimarguments</key>
-				<true/>
-				<key>variableprefix</key>
-				<string>date</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.split</string>
-			<key>uid</key>
-			<string>B3D5E122-B254-4F23-AA0F-58D83F5374C8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1097,53 +962,6 @@ fi</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>71471E69-B09E-4305-B5A4-C7960DB3AD2B</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/python main.py "{query} --dates --range $date1 $date2"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>90ED5AD7-386C-4B76-B0EB-B09D4686756C</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -2001,13 +1819,6 @@ On each node, you can:
 			<key>ypos</key>
 			<integer>870</integer>
 		</dict>
-		<key>24F17C12-B3BA-4F96-896E-0F2C7330C250</key>
-		<dict>
-			<key>xpos</key>
-			<integer>10</integer>
-			<key>ypos</key>
-			<integer>315</integer>
-		</dict>
 		<key>25AA9577-9BB5-49FC-B34B-9C283DCC0D44</key>
 		<dict>
 			<key>xpos</key>
@@ -2148,13 +1959,6 @@ On each node, you can:
 			<key>ypos</key>
 			<integer>1565</integer>
 		</dict>
-		<key>90ED5AD7-386C-4B76-B0EB-B09D4686756C</key>
-		<dict>
-			<key>xpos</key>
-			<integer>680</integer>
-			<key>ypos</key>
-			<integer>550</integer>
-		</dict>
 		<key>988552EE-E560-4A5F-B000-81491A169449</key>
 		<dict>
 			<key>xpos</key>
@@ -2190,13 +1994,6 @@ On each node, you can:
 			<key>ypos</key>
 			<integer>285</integer>
 		</dict>
-		<key>B3D5E122-B254-4F23-AA0F-58D83F5374C8</key>
-		<dict>
-			<key>xpos</key>
-			<integer>190</integer>
-			<key>ypos</key>
-			<integer>345</integer>
-		</dict>
 		<key>B72FF8A3-4917-47D0-A762-DE2E69D8EBDB</key>
 		<dict>
 			<key>xpos</key>
@@ -2231,13 +2028,6 @@ On each node, you can:
 			<integer>1405</integer>
 			<key>ypos</key>
 			<integer>1595</integer>
-		</dict>
-		<key>EC015090-A185-4B6E-AB4D-8247B904AD22</key>
-		<dict>
-			<key>xpos</key>
-			<integer>305</integer>
-			<key>ypos</key>
-			<integer>345</integer>
 		</dict>
 		<key>F2BB4D5E-C1C9-4D49-9A91-AB3A07778310</key>
 		<dict>

@@ -2,7 +2,6 @@ import re
 import sys
 
 from collections import namedtuple, defaultdict
-from datetime import datetime, timedelta
 
 if sys.version_info.major == 3:
     from html.parser import HTMLParser
@@ -92,34 +91,18 @@ class NodeParser(HTMLParser):
         if tag == "a":
             link = attrs.get("href")
             self.links.append(link)
-        elif tag == "time":
-            startyear = int(attrs["startyear"])
-            startmonth = int(attrs["startmonth"])
-            startday = int(attrs["startday"])
-            endyear = int(attrs.get("endyear", startyear))
-            endmonth = int(attrs.get("endmonth", startmonth))
-            endday = int(attrs.get("endday", startday))
-            start = datetime(startyear, startmonth, startday)
-            end = datetime(endyear, endmonth, endday)
-            self.dates.append((start, end))
 
     def handle_data(self, data):
         self.text.append(data)
     
     def feed(self, *args, **kwargs):
-        self.dates = []
         self.links = []
         self.text = []
         HTMLParser.feed(self, *args, **kwargs)
         text = str.join("", self.text)
         tags = re.findall("(?:^|\s)(#[\w]?[\w_-]+)", text)
         mentions = re.findall("(?:^|\s)(@[\w]?[\w_-]+)", text)
-        return text, tags, mentions, self.dates, self.links
-
-def daterange(start_date, end_date, end_included=False):
-    offset = 1 if end_included else 0
-    for n in range(int((end_date - start_date).days) + offset):
-        yield start_date + timedelta(n)
+        return text, tags, mentions, self.links
 
 def mirrored(method):
     def wrapper(self, *args, **kwargs):
@@ -134,7 +117,7 @@ class Node:
     parser = NodeParser()
     def __init__(self, tree, path, **kwargs):
         self._name = kwargs["nm"]
-        self._text, self._tags, self._mentions, self._dates, self._links = self.parser.feed(self._name)
+        self._text, self._tags, self._mentions, self._links = self.parser.feed(self._name)
         self.path = path
         self.id = kwargs["id"]
         self.metadatas = kwargs.get("metadata", {})
@@ -153,11 +136,6 @@ class Node:
     def text(self):
         return self._text
     
-    @property
-    @mirrored
-    def dates(self):
-        return self._dates
-
     @property
     @mirrored
     def note(self):
