@@ -15,4 +15,4 @@ On each node, you can:
 - use <kbd>alt+enter</kbd> to add a child to the selected node
 - use <kbd>cmd+enter</kbd> to open in desktop app
 - use <kbd>shift+enter</kbd> to open embed link, or tap <kbd>shift</kbd> to preview it.
-- use <kbd>cmd+l</kbd> to show a node note, and <kbd>cmd+c</kbd> to open it
+- use <kbd>cmd+l</kbd> to show a node note, and <kbd>cmd+c</kbd> to copy it
