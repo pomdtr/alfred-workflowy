@@ -8,11 +8,37 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>0128C41D-D991-4666-B985-5A521F56A801</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11E9D362-60B3-4F46-B190-70059370897A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>085D6302-011F-452D-A7D8-D317D3F977C4</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A1BBDB61-71E0-4D78-8205-0D69339AA9F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>11E9D362-60B3-4F46-B190-70059370897A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4246B0AF-449C-4F9B-9C46-FDA322729AC0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -126,11 +152,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>39C647BD-D88E-4804-AB48-EBDC0B02A8FB</key>
@@ -149,11 +175,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>41395F65-4C36-44F0-8F83-8CA49051C5CD</key>
@@ -161,6 +187,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>25AA9577-9BB5-49FC-B34B-9C283DCC0D44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4246B0AF-449C-4F9B-9C46-FDA322729AC0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5FB33035-D8D6-4879-AF75-39F83F1F2D7D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -185,11 +224,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>4E478DAC-B1DB-462E-88CD-CAE4C5EAAB4B</key>
@@ -208,11 +247,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>5D1A89D5-8298-4101-864A-5CF70F7C7956</key>
@@ -220,6 +259,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>B72FF8A3-4917-47D0-A762-DE2E69D8EBDB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5FB33035-D8D6-4879-AF75-39F83F1F2D7D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>988552EE-E560-4A5F-B000-81491A169449</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -244,11 +296,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>67A5040C-A163-40CA-8A39-7594387944BD</key>
@@ -267,11 +319,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>6BE77B4B-93DD-46AF-91B1-ED9DABD28B77</key>
@@ -316,11 +368,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>75DA6AC3-BEC7-400E-AF37-D106820B1844</key>
@@ -349,11 +401,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>898F038E-E787-4E4C-B371-C1124A801908</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0128C41D-D991-4666-B985-5A521F56A801</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
 		<key>90ED5AD7-386C-4B76-B0EB-B09D4686756C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A32FBCCC-03B8-42FA-B49F-F8DC71E8329A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>988552EE-E560-4A5F-B000-81491A169449</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E3332E68-E6A7-4A20-A8E7-7A790C52F848</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -378,11 +456,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>A1BBDB61-71E0-4D78-8205-0D69339AA9F9</key>
@@ -492,7 +570,20 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>E3332E68-E6A7-4A20-A8E7-7A790C52F848</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1FA36148-02D1-4128-AE1E-384EBA4718AD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -528,11 +619,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>F659EE87-C212-4003-A9B1-9ACECF37CF82</key>
@@ -551,11 +642,11 @@
 				<key>destinationuid</key>
 				<string>085D6302-011F-452D-A7D8-D317D3F977C4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 	</dict>
@@ -920,7 +1011,7 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>keyword</key>
 				<string>wlogout</string>
 				<key>subtext</key>
@@ -928,7 +1019,7 @@ fi</string>
 				<key>text</key>
 				<string>Logout from Workflowy</string>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
@@ -988,7 +1079,7 @@ fi</string>
 				<key>runningsubtext</key>
 				<string>Fetching nodes...</string>
 				<key>script</key>
-				<string>/usr/bin/python main.py "{query} --find"</string>
+				<string>/usr/bin/python main.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1084,7 +1175,7 @@ fi</string>
 				<key>runningsubtext</key>
 				<string>Fetching nodes...</string>
 				<key>script</key>
-				<string>/usr/bin/python main.py "{query} --with-completed --find"</string>
+				<string>/usr/bin/python main.py "--with-completed {query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1684,6 +1775,168 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Google Chrome" to return URL of active tab of front window
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>0128C41D-D991-4666-B985-5A521F56A801</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Google Chrome" to return title of active tab of front window
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4246B0AF-449C-4F9B-9C46-FDA322729AC0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Fetching nodes...</string>
+				<key>script</key>
+				<string>/usr/bin/python main.py "{query} --node"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Workflowy Find</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>988552EE-E560-4A5F-B000-81491A169449</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>wbm</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Bookmark Chrome Tab</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>898F038E-E787-4E4C-B371-C1124A801908</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>title</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5FB33035-D8D6-4879-AF75-39F83F1F2D7D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>&lt;a href="{var:href}"&gt;{var:title}&lt;/a&gt;</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>node_id</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E3332E68-E6A7-4A20-A8E7-7A790C52F848</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>href</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>11E9D362-60B3-4F46-B190-70059370897A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Use wlogin to autentificate to your workflowy account.
@@ -1693,24 +1946,39 @@ There are many available shortcuts:
 - wh: display your home page
 - ws/wm/wt/wl: show starred/mentions/tags/links
 - wd: search using date
+- wbm: bookmark a chrome tab
 
 Many shortcuts can be suffixed with a c in orderto include completed nodes in results.
 
 On each node, you can:
 - Use tab to display child nodes directly in alfred
 - use enter to open in browser
-- use cmd+enter to add a child to the selected node
-- use alt+enter to open in desktop app
+- use alt+enter to add a child to the selected node
+- use cmd+enter to open in desktop app
 - use shift+enter to open embed link, or tap shift to preview it.
 - use cmd+l to show a node note, and cmd+c to open it</string>
 	<key>uidata</key>
 	<dict>
+		<key>0128C41D-D991-4666-B985-5A521F56A801</key>
+		<dict>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>1565</integer>
+		</dict>
 		<key>085D6302-011F-452D-A7D8-D317D3F977C4</key>
 		<dict>
 			<key>xpos</key>
 			<integer>970</integer>
 			<key>ypos</key>
 			<integer>1450</integer>
+		</dict>
+		<key>11E9D362-60B3-4F46-B190-70059370897A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>905</integer>
+			<key>ypos</key>
+			<integer>1595</integer>
 		</dict>
 		<key>167CDDEB-8D9E-4AD7-8B8B-76DE547C6AF7</key>
 		<dict>
@@ -1775,6 +2043,13 @@ On each node, you can:
 			<key>ypos</key>
 			<integer>100</integer>
 		</dict>
+		<key>4246B0AF-449C-4F9B-9C46-FDA322729AC0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>965</integer>
+			<key>ypos</key>
+			<integer>1565</integer>
+		</dict>
 		<key>46AF1BBE-2262-45E5-999D-D463C7484FDE</key>
 		<dict>
 			<key>xpos</key>
@@ -1802,6 +2077,13 @@ On each node, you can:
 			<integer>385</integer>
 			<key>ypos</key>
 			<integer>105</integer>
+		</dict>
+		<key>5FB33035-D8D6-4879-AF75-39F83F1F2D7D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1135</integer>
+			<key>ypos</key>
+			<integer>1595</integer>
 		</dict>
 		<key>5FDBAF59-7762-4E80-9EEB-D941628E6D22</key>
 		<dict>
@@ -1859,12 +2141,26 @@ On each node, you can:
 			<key>ypos</key>
 			<integer>125</integer>
 		</dict>
+		<key>898F038E-E787-4E4C-B371-C1124A801908</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>1565</integer>
+		</dict>
 		<key>90ED5AD7-386C-4B76-B0EB-B09D4686756C</key>
 		<dict>
 			<key>xpos</key>
 			<integer>680</integer>
 			<key>ypos</key>
 			<integer>550</integer>
+		</dict>
+		<key>988552EE-E560-4A5F-B000-81491A169449</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1225</integer>
+			<key>ypos</key>
+			<integer>1565</integer>
 		</dict>
 		<key>9E6C4C86-B48F-4422-A45D-613EB9839EAB</key>
 		<dict>
@@ -1929,6 +2225,13 @@ On each node, you can:
 			<key>ypos</key>
 			<integer>1495</integer>
 		</dict>
+		<key>E3332E68-E6A7-4A20-A8E7-7A790C52F848</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1405</integer>
+			<key>ypos</key>
+			<integer>1595</integer>
+		</dict>
 		<key>EC015090-A185-4B6E-AB4D-8247B904AD22</key>
 		<dict>
 			<key>xpos</key>
@@ -1959,7 +2262,7 @@ On each node, you can:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.2</string>
+	<string>0.4.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
