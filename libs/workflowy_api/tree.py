@@ -1,5 +1,6 @@
 import re
 import sys
+import logging
 
 from collections import namedtuple, defaultdict
 
@@ -31,8 +32,9 @@ class Tree:
     def load_starred_nodes(self, saved_views):
         starred_nodes, starred_searches = [], []
         for item in saved_views:
-            node_id = Node.shorten_id(item["zoomedProject"]["projectid"])
-            if not node_id in self.available_nodes:
+            projectId = item["zoomedProject"]["projectid"]
+            node_id = Node.shorten_id(projectId)
+            if not (node_id in self.available_nodes or node_id == "None"):
                 continue
             node = (
                 self.available_nodes[Node.shorten_id(node_id)]
@@ -145,6 +147,8 @@ class Node:
 
     @staticmethod
     def shorten_id(node_id):
+        if node_id is None:
+            return None
         return node_id.split("-")[-1]
 
     @property

@@ -91,7 +91,7 @@ def main(wf):
         return get_tree(session_id)
 
     tree, tree_with_completed, transaction_id = wf.cached_data(
-        "workflowy_tree", wrapper, max_age = 0
+        "workflowy_tree", wrapper, max_age = 1
     )
     if not wf.cached_data_fresh('workflowy_tree', max_age=15):
         cmd = ['/usr/bin/python', wf.workflowfile('update.py')]
@@ -159,11 +159,11 @@ def main(wf):
         if args.node:
             add_simple_node_item(wf, node, autocomplete)
         else:
-            add_node_item(wf, node, autocomplete, sortable=not args.hierarchical)
+            add_node_item(wf, node, autocomplete, only_links=args.only_links, sortable=not args.hierarchical)
 
     if args.starred:
         for search in tree.starred_searches:
-            add_search_item(search)
+            add_search_item(wf, search)
 
     if len(nodes) + len(tree.starred_searches) == 0:
         wf.add_item(
@@ -192,13 +192,13 @@ def add_simple_node_item(wf, node, autocomplete, sortable=True):
         quicklookurl=node.embed_link,
     )
 
-def add_node_item(wf, node, autocomplete, sortable=True):
+def add_node_item(wf, node, autocomplete, only_links=False, sortable=True):
     it = wf.add_item(
         title=node.text or "Empty",
         subtitle=node.path,
         uid=node.id if sortable else None,
         valid=True,
-        arg=node.website_url,
+        arg=node.embed_link if only_links else node.website_url,
         icon=get_node_icon(node),
         autocomplete="%s%s " % (autocomplete, node.short_id)
         if node.children
