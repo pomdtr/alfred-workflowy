@@ -58,6 +58,7 @@ def login(wf, username, password, code):
 
 def logout(wf):
     wf.delete_password("session_id")
+    wf.clear_cache()
     print("Logout successful")
 
 
@@ -90,7 +91,7 @@ def main(wf):
         return get_tree(session_id)
 
     tree, tree_with_completed, transaction_id = wf.cached_data(
-        "workflowy_tree", None, max_age = 0
+        "workflowy_tree", wrapper, max_age = 0
     )
     if not wf.cached_data_fresh('workflowy_tree', max_age=15):
         cmd = ['/usr/bin/python', wf.workflowfile('update.py')]

@@ -1763,7 +1763,6 @@ There are many available shortcuts:
 - wf: search your workflowy workspace
 - wh: display your home page
 - ws/wm/wt/wl: show starred/mentions/tags/links
-- wd: search using date
 - wbm: bookmark a chrome tab
 
 Many shortcuts can be suffixed with a c in orderto include completed nodes in results.
@@ -2052,7 +2051,7 @@ On each node, you can:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.4.0</string>
+	<string>0.4.1</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

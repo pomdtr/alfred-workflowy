@@ -55,9 +55,6 @@ class Tree:
             node = Node(self, path, **serialized_node)
             if not self.with_completed and node.is_completed:
                 return
-            for start_date, end_date in node.dates:
-                for date in daterange(start_date, end_date, end_included=True):
-                    self.calendar[date.strftime("%Y-%m-%d")].append(node.short_id)
             for tag in node.tags:
                 self.tags[tag].add(node.short_id)
             for mention in node.mentions:
