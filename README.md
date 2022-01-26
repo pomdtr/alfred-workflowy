@@ -1,3 +1,10 @@
+# Installation 
+To install this Alfred Workflow:
+1) Download the latest .alfredworkflow file from the [releases](https://github.com/pomdtr/alfred-workflowy/releases)
+1) Import the workflow as instructed in the [docs](https://www.alfredapp.com/blog/tips-and-tricks/tutorial-importing-and-setting-up-alfred-workflows/)
+
+# Usage
+
 Use wlogin to autentificate to your workflowy account.
 
 There are many available shortcuts:
